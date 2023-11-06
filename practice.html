@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            position: relative;
+            background-color: rgb(7, 244, 201);
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgb(114, 2, 2);
+            border-radius: 10px;
+            translate: 500px 90px;
+            padding: 20px 5px;
+            box-shadow: 1px 1px 20px 2px black;
+
+
+            
+        }
+        .formm{
+            padding: 50px 20px;
+            top: 2px;
+            position: relative;
+
+        }
+        header{
+            height: 10vh;
+            background-color: rgb(135, 2, 2);
+            width: 100vw;
+            display: flex;
+        }
+        h3{
+            position: relative;
+            bottom: 50px;
+            left: 0px;
+            font-size: 22px;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        
+        button{
+            position: relative;
+            left: 80px;
+            background-color: black;
+            color: white;
+            padding: 5px 5px;
+            border-radius: 20px;
+            border: 2px solid white;
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            width: 100px;
+        }
+        #tm, #obt{
+            border-radius: 20px;
+            list-style: none;
+            padding: 10px 0px;
+            text-align: center;
+            width: 250px;
+            position: relative;
+            bottom: 0px;
+            border: 2px solid brown;
+        }
+        label{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: relative;
+            left: 75px;
+            bottom: 5px;
+            
+        }
+        #change{
+            color: rgb(0, 0, 0);
+            position: relative;
+            top: 20px;
+            left: 58px;
+            font-size: 15px;
+
+        }
+        #result{
+            color: rgb(0, 0, 0);
+            position: relative;
+            top: 37px;
+            right: 12px;
+            font-size: 15px;
+
+
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        li{
+            text-decoration: none;
+            list-style: none;
+            display: inline;
+            margin: 20px 20px;
+            color: white;
+            font-size: large;
+            font-weight: bold;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </nav>
+    </header>
+    <div class="container">
+    
+    <form onsubmit="percentage(); return false" class="formm">
+        <h3>Percentage Calculator....!</h3>
+        <label for="tm">Total-Marks</label>
+        <input type="number" name="nmbr" id="tm" placeholder="Enter Total-Marks"><br><br>
+        <label for="obt">Obtained-Marks</label>
+        <input type="number" name="nmbr" id="obt" placeholder="Enter Obtained-Marks"><br><br>
+        <button type="submit">Calcute Now</button>
+        <p id="result"><b>Result 👉</b></p>
+        <p id="change"></p>
+    </form>
+    
+</div>
+<script>
+    function percentage(){
+        stdTm = document.querySelector("#tm").value;
+        stdObt = document.querySelector("#obt").value;
+        res = (stdObt / stdTm) *100
+        alert(`You Got ${res}%`);
+        document.querySelector("#change").innerHTML=(`You Got ${res}%`)
+    }
+</script>
+</body>
+</html>
