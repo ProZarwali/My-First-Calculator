@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="shortcut icon" href="calc.png" type="image/x-icon">
     <style>
         *{
             padding: 0;
             margin: 0;
         }
+        main{
+            height: 80vh;
+            display: flex;
+            background-image: url(grad.jpg);
+            background-size: 1280px 460px;
+        }
         .container{
             position: relative;
-            background-color: rgb(7, 244, 201);
+            /* background-color: rgb(7, 244, 201); */
+            /* background-image: url(grad.jpg); */
+            /* background-size: 312px 350px; */
             width: 300px;
-            height: 300px;
+            height: 307px;
             border: 2px solid rgb(114, 2, 2);
             border-radius: 10px;
             translate: 500px 90px;
-            padding: 20px 5px;
+            padding: 22px 5px;
             box-shadow: 1px 1px 20px 2px black;
-
-
-            
+            justify-content: center;
+            align-items: center;
+            bottom: 40px;
+            background: url(grad.jpg);
         }
+
         .formm{
             padding: 50px 20px;
             top: 2px;
@@ -41,7 +52,8 @@
             left: 0px;
             font-size: 22px;
             font-weight: bolder;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
 
         }
         
@@ -101,11 +113,36 @@
             text-decoration: none;
             list-style: none;
             display: inline;
-            margin: 20px 20px;
+            margin: 0px 20px;
             color: white;
             font-size: large;
             font-weight: bold;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow: 1px 1px black;
+        }
+        footer{
+            height: 10vh;
+            background-color: rgb(135, 2, 2);
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration:solid;
+        }
+
+        #change{
+            color: white;
+            font-weight: bold;
+            text-shadow: 0.5px 0.3px black;
+        }
+        .ftext{
+            letter-spacing: 3px;
+        }
+        .icon{
+            translate: 700px 0px;
+            position: relative;
+            
         }
     </style>
 </head>
@@ -116,8 +153,11 @@
             <li>About</li>
             <li>Services</li>
             <li>Contact</li>
+            <li><img src="image-asset.png" class="icon" alt="" width="140px"></li>
         </nav>
     </header>
+    
+    <main>
     <div class="container">
     
     <form onsubmit="percentage(); return false" class="formm">
@@ -130,8 +170,13 @@
         <p id="result"><b>Result 👉</b></p>
         <p id="change"></p>
     </form>
-    
 </div>
+
+
+</main>
+<footer>
+    <p class="ftext">Copy-Right &copy; ProZarwali</p>
+</footer>
 <script>
     function percentage(){
         stdTm = document.querySelector("#tm").value;
@@ -139,6 +184,7 @@
         res = (stdObt / stdTm) *100
         alert(`You Got ${res}%`);
         document.querySelector("#change").innerHTML=(`You Got ${res}%`)
+        
     }
 </script>
 </body>
